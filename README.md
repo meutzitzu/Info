@@ -1,0 +1,2 @@
+# Info
+pentru bac
