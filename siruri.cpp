@@ -4,6 +4,10 @@ using namespace std;
 
 int main()
 {
-  cout<<"H3LL0, world";
+
+
+
+
+  cout<<"MUEPSD";
   return 0;
 }
