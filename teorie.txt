@@ -1,0 +1,41 @@
+/// CLASA A 11-A ///
+
+
+
+
+
+
+///   S I R U R I  \\\\\\\
+//////////////////////////
+|
+|    Siruri de caractere: - cod ASCII
+|
+|    char c = 'b'    c 98
+|    c++;            c 99
+|
+|    cout<<c;
+|    if(c=='\99')
+|    c=cin.get();   // se citeste caracter (oricare)
+|    cin>>noskipws>>a[n] // citeste cu tot cu spatii
+|
+|    c=toupper(c) <=> if(islower(c)) c-=32;
+|    c=tolower(c) <=> if(isupper(c)) c+=32;
+|
+|    if(c=='a'||c=='e'||c=='i'||c=='u'||c=='o')
+|
+|    MEMORARE SIRURI
+|    se face de la 0
+|    are la sfarsit caracter nul ('\0')  <- N U L L   T E R M I N A T O R
+|
+|    char a[20];
+|    citire pana la spatiu sau enter:    cin>>a;
+|    citire pana la enter:               cin.getline(a,19);
+|
+|    SAU CARACTER SPECIAL :              cin.getline(a,19,'!');
+|
+|
+\//////////////////////////
+
+//ex
+
+PALINDROM:
