@@ -2,23 +2,25 @@
 #include <fstream>
 using namespace std;
 
+
+/// DISPECERAT ///
+void disp(string C){
+
+
+}
+
+/// MESAJE ///
+void msg(string M){
+    
+
+}
 void r();
+
 
 int main()
 {
-char C[64];
-cout<<"cerinta: ";
-cin>>C;
+disp();
 
-switch(C)
-  {
-    case "palindrom" :{
-      r();
-
-    }
-
-
-  }
 
 
   return 0;

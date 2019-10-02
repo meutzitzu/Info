@@ -5,8 +5,8 @@
 
 
 
-///   S I R U R I  \\\\\\\
-//////////////////////////
+///   S I R U R I  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+////////////////////////////////////////////////////////////////////////////////
 |
 |    Siruri de caractere: - cod ASCII
 |
@@ -33,8 +33,87 @@
 |
 |    SAU CARACTER SPECIAL :              cin.getline(a,19,'!');
 |
-|
-\//////////////////////////
+    <string.h>
+
+    LUNGIMEA unui sir
+
+      strlen(a) <- nr litere
+
+      for(int k=0; k< strlen(a); k++ )
+        cout<<a;
+
+      a[strlen(a)]='\0'   <- N U L L   T E R M I N A T O R
+
+
+    COPIEREA unui SIR
+
+        strcpy( dest, sursa );
+
+        cout<<strcpy( a, "castor" );  //returneaza sirul copiat
+
+    COMPARAREA L E X I C O G R A F I C A
+
+        strcmp(a,b) = { - , a < b
+                        0 , a = b
+                        +,  a > b;
+                      } //adesea folosit pentru a verifica daca doua Siruri sunt IDENTICE
+
+        exista si strncmp
+
+    Copierea primelor N litere
+
+        strncpy (a,b,n) - copiaza primele n litere din b in a
+        !!!nu copiaza TERMINATORUL NUL!!!
+        char a[]="papagal";
+        char b[]="caramida";
+        strncpy(a,b,4) // "CARAgal \0"
+
+    CONCATENARE
+        strcat(a,b);   <- alipeste sirul B la sfarsitul sirului a
+        "aaaaaaaaabbbbbbbbbbbbb \0"
+
+        strncat(a,b,n)  <- alipeste la sfarsitul sirului a doar primele litere din b
+
+
+      INVERSARE SIR
+        strrev(a);
+
+      CAUTARE litera in sir
+        strchr( sir, caracter )    <- returneaza subsirul care incepe cu prima aparitie a caracterului
+
+        strchr("matematica", 'e') -> "ematica"
+
+        VERIFICARE VOCALE
+
+          if( strchr( "aeiouAEIOU", c)){}
+                                            !! daca c este TERMINATOR NUL => POZITIVA FALSA
+
+      CAUTARE SIR IN SIR
+        sirstr( sir, subsir );  -> returneaza sirul de la prima aparitie a subsirului
+
+        strstr( "caracterizare" , "ac" ) -> "acterizare"
+
+      <cstdib>
+      SIR -> INTREG
+        atoi( sir, intreg );
+      INTREG -> SIR
+        itoa( intreg, sir, baza);
+
+
+      0|1|2|3|4|5|6|7|8|9
+      a t m o s f e r a\0
+               |
+      a+5- - - /
+
+      cout<< a + 5; //fera
+
+      poz <=> strchr(a, lit) -a;
+
+      ex: afisati SUFIXE, PREFIXE
+
+
+
+\///////////////////////////////////////////////////////////////////////////////
 
 //ex
 
