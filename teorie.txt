@@ -91,7 +91,7 @@
       CAUTARE SIR IN SIR
         sirstr( sir, subsir );  -> returneaza sirul de la prima aparitie a subsirului
 
-        strstr( "caracterizare" , "ac" ) -> "acterizare"
+        strstr( "caracterizare" , "ac" ) -> "acteriszare"
 
       <cstdib>
       SIR -> INTREG
@@ -115,6 +115,18 @@
 
 \///////////////////////////////////////////////////////////////////////////////
 
-//ex
 
-PALINDROM:
+    S E P A R A R E A   I N   C U V I N T E
+    a: "Am plecat la plimbare"
+    cuv: p l e c a t\0
+
+      char s[201],cuv[21];
+      cin>>getline(a,200);
+      for(i = 0 ; a[i] ; i++)
+        {
+          k=0;
+          while(isalpha(a[i])) cuv[k++]=a[i++];
+          cuv[k]=0;
+          cuv[0]=toupper(cuv[0]);
+          strncpy((a+i)-k,cuv,k);
+        }

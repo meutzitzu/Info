@@ -4,23 +4,23 @@ using namespace std;
 
 
 /// DISPECERAT ///
-void disp(string C){
+void getc(){
 
 
 }
 
 /// MESAJE ///
 void msg(string M){
-    
+
 
 }
-void r();
 
 
 int main()
 {
-disp();
 
+cout<<"MERE";
+void getc();
 
 
   return 0;
