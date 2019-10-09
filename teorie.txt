@@ -130,3 +130,53 @@
           cuv[0]=toupper(cuv[0]);
           strncpy((a+i)-k,cuv,k);
         }
+
+
+///   P O I N T E R I  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+////////////////////////////////////////////////////////////////////////////////
+
+  char a[200];    0 1 2 3 4 5 6 7 8 9
+                  a c o|m|o d a r e\0
+
+  char *p;
+  cin>>a; //declarare pointer la
+
+  p=a+3;
+
+  cout<<p;  //modare
+
+  ADAUGARE INTREG la pointer
+
+      p++;
+
+      cout<<p;  //odare
+
+      cout<<p -a; //1 (pozitia)
+
+      strchr(a, 'd')-a = prima poz pe care se gaseste chr 'd'
+
+      strstr(a, "om")-a = prima poz pe care se gaseste sirul "om"
+
+
+  ex: char a[200];
+      cin.getline(a,199);
+      p=a;
+      while(strchr(p,'a'))
+       {
+          p=strchr(p,'a');
+          cout<<p-a;
+          p++;
+
+       }
+  ex2:
+    char a[200], b[20],*p;
+    cin.getline(a,199);
+
+    cin>>b;
+    p=a;
+
+    while(p=strstr(p,b))
+      {
+      cout<< p -a;
+      p++;
+      }
