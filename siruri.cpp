@@ -12,14 +12,7 @@ void msg(char M[]){
 
 /// SUBPROGRAME ///
 void help(){
-  string arg0, arg1, arg2, arg3;
-  printf(
-         "help          : listeaza comenzile posibile\n"
-          "palindrom    : determina daca un cuvant este palindrom\n"
-          "replace (\"sir\",\"sir\"): insereaza in date.in sirul dat la fiecare aparitie a sir \n"
-          "sufix_comun (\"sir\",\"sir\"): afiseaza cel mai mare sufix comun a celor 2 siruri",
-          arg0, arg1, arg2, arg3
-        );
+
 }
 
   void palindrom(){
@@ -27,21 +20,25 @@ void help(){
   }
 
   void sufix_comun(){
-      char a, b;
-      scanf("%s\n", a);
-      scanf("%s\n", b);
-      int ka=strlen(a), kb=strlen(b);
-      printf("ka%c, kb%c ... \n",ka, kb);
+      char a[256], b[256];
+      int ka,kb,d;
+      printf("s1= ");
+      scanf("%s", a);
+      printf("\ns2= ");
+      scanf("%s", b);
+      ka=strlen(a);
+      kb=strlen(b);
+      d=ka;
+
       while(a[ka]==b[kb]){
-        --ka;
+              --ka;
         --kb;
       }
-      while(ka>=0){
-         printf("%c",a[ka++]);
+      printf("sufix_comun(s2,s2)=\"");
+      while(ka<d-1){
+         printf("%c",a[++ka]);
       }
-
-
-
+      printf("\"\n");
   }
 
 /// DISPECERAT ///
