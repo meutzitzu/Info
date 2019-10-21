@@ -29,6 +29,7 @@ void revvoc(){
 }
 
 
+
  void palindrom(){
          printf("NU MERE INCA\n");
  }
@@ -53,6 +54,22 @@ void revvoc(){
          printf("%c",a[++ka]);
         }
         printf("\"\n");
+  }
+
+  void G68(){
+        char a[256];
+        int N;
+        inr r0;
+        int i;
+        int nv;
+        int Tnv;
+        
+        for(k=0;k<N;k++){
+                scanf("%s\n", a );
+                if(strchr("aeiouAEIOU",a[k])){
+
+                }
+        }
   }
 
 /// DISPECERAT ///
