@@ -28,7 +28,40 @@ void revvoc(){
 
 }
 
-
+void stelutze(){
+        char a[255];
+        char b[255];
+        char r[255];
+        printf("a= ");
+        scanf("%s", a);
+        printf("a= %s\n", a);
+        int N=strlen(a);
+        printf("n= %d\n", N );
+        int k=0, i=0;
+        bool eq;
+        while(isalpha(a[k]))
+          {
+                b[k]=a[k];
+                k++;
+          }
+         b[k]=0;
+        for( i= 0; i<N; i++ )
+          {
+                k=0;
+                //printf("%d", k );
+                while(isalpha(a[i]))
+                  {
+                          r[k++]=a[i++];
+                  }
+                r[k]=0; //NULL TERMINATOR
+                if(strcmp(r, b)==0)
+                  {
+                        strcpy(a+i-k,a+i);
+                        i-=k;
+                  }
+          }
+        printf("rez= %s\n", a );
+}
 
  void palindrom(){
          printf("NU MERE INCA\n");
@@ -59,11 +92,11 @@ void revvoc(){
   void G68(){
         char a[256];
         int N;
-        inr r0;
-        int i;
+        int r0;
+        int k;
         int nv;
         int Tnv;
-        
+
         for(k=0;k<N;k++){
                 scanf("%s\n", a );
                 if(strchr("aeiouAEIOU",a[k])){
@@ -88,6 +121,8 @@ cin>>C;
                 palindrom();
         } else if (strstr(C,    "sufix_comun")){
                 sufix_comun();
+        } else if (strstr(C,    "stelutze")){
+                stelutze();
         } else {
                 printf("type \"help\" for a list of commands");
         }
