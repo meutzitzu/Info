@@ -7,6 +7,7 @@ using namespace std;
 
 /// MESAJE ///
 void TEST(){
+        /*
         printf("x=");
         int i;
         char    s[]="absolvent",
@@ -16,7 +17,14 @@ void TEST(){
                 strcpy(x,s+i);
         }
         printf("%s\n", x );;
+        */
+        char s1[20]="algo";
+        char s2[20]="at";
+        char s3[20]="ritm";
+        
+
 }
+
 
 /// SUBPROGRAME ///
 void help(){
