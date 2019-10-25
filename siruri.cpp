@@ -3,7 +3,7 @@
 #include <string.h>
 using namespace std;
 
-
+ifstream fin ("date.in");
 
 /// MESAJE ///
 void TEST(){
@@ -21,13 +21,37 @@ void TEST(){
         char s1[20]="algo";
         char s2[20]="at";
         char s3[20]="ritm";
-        
+
 
 }
 
+void rw2m(){
+        char    s[ 256],
+                a[ 32][ 32],
+                w[ 32];
+        scanf("%s", s );
+        int i, k,
+            n= 0;
 
-/// SUBPROGRAME ///
-void help(){
+        for( i= 0; i< strlen( s); i++ )
+          {
+                k= 0;
+                while ( isalpha( s[ i]) )
+                  {
+                        w[ ++k]= s[ i++];
+                  }
+                w[ k]= 0;
+                strcpy( a[ i], w);
+                n++;
+          }
+          printf("MERE");
+}
+
+void diagonala (){
+        char m[ 32][ 32],
+             s[ 256];
+        fin>>noskipws>>s;
+        for( i= 0; i<=)
 
 }
 
@@ -36,10 +60,37 @@ void revvoc(){
 
 }
 
+
 void stelutze(){
-        char a[255];
-        char b[255];
-        char r[255];
+        char a[256], *p, w[32];
+        printf("a= ");
+        scanf("%s", a );
+        p=strchr( a, '*');
+        strncpy( w, a, p -a);
+        w[p -a]=0;
+        p=a;
+        a[ -1]='*';
+
+        while( p= strstr( p, w) )
+        printf("MERE");
+          {
+                if( p[-1]=='*' && p[ strlen( w)]=='*' )
+                  {
+                        strcpy( p,p +strlen( w) );
+                  }
+                else
+                  {
+                          p++;
+                  }
+          }
+        printf("%s\n", a );
+
+}
+
+void stelutze0(){
+        char a[256];
+        char b[256];
+        char r[256];
         printf("a= ");
         scanf("%s", a);
         printf("a= %s\n", a);
@@ -52,7 +103,7 @@ void stelutze(){
                 b[k]=a[k];
                 k++;
           }
-         b[k]=0;
+        b[k]=0;
         for( i= 0; i<N; i++ )
           {
                 k=0;
@@ -92,9 +143,8 @@ void stelutze(){
         }
         printf("sufix_comun(s2,s2)=\"");
         while(ka<d-1){
-         printf("%c",a[++ka]);
-        }
-        printf("\"\n");
+                printf("%c",a[++ka]);
+        }printf("\"\n");
   }
 
   void G68(){
@@ -119,17 +169,17 @@ char C[20];
 cout<<">";
 cin>>C;
 
-        if (strstr(C,            "Q!")){
+        if (strstr(C,                    "Q!")){
                 return 0;
-        } else if (strstr(C,         "help")){
-                help();
-        } else if (strstr(C,         "TEST")){
-                TEST();
-        } else if (strstr(C,    "palindrom")){
+        } else if (strstr(C,            "TEST")){
+                TEST();}
+         else if (strstr(C,             "rw2m")){
+                rw2m();
+        } else if (strstr(C,            "palindrom")){
                 palindrom();
-        } else if (strstr(C,    "sufix_comun")){
+        } else if (strstr(C,            "sufix_comun")){
                 sufix_comun();
-        } else if (strstr(C,    "stelutze")){
+        } else if (strstr(C,            "stelutze")){
                 stelutze();
         } else {
                 printf("type \"help\" for a list of commands");
