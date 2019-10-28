@@ -6,7 +6,8 @@ using namespace std;
 ifstream fin ("date.in");
 
 /// MESAJE ///
-void TEST(){
+void TEST()
+{
         /*
         printf("x=");
         int i;
@@ -25,7 +26,22 @@ void TEST(){
 
 }
 
-void rw2m(){
+void v2UPPER()
+{
+        char w[32];
+        scanf("%s\n", w);
+        for(int i = 0; i < strlen(w); i++){
+                if(strchr("aeiou", w[i])){
+                toupper(w[i]);
+                }
+                printf("%c ", w[i]);
+        }
+        printf("\n%s\n", w);
+
+}
+
+void rw2m()
+{
         char    s[ 256],
                 a[ 32][ 32],
                 w[ 32];
@@ -47,21 +63,24 @@ void rw2m(){
           printf("MERE");
 }
 
-void diagonala (){
+void diagonala ()
+{
         char m[ 32][ 32],
              s[ 256];
         fin>>noskipws>>s;
-        for( i= 0; i<=)
+        //for( i= 0; i<=)
 
 }
 
-void revvoc(){
+void revvoc()
+{
         printf("called");
 
 }
 
 
-void stelutze(){
+void stelutze()
+{
         char a[256], *p, w[32];
         printf("a= ");
         scanf("%s", a );
@@ -87,7 +106,8 @@ void stelutze(){
 
 }
 
-void stelutze0(){
+void stelutze0()
+{
         char a[256];
         char b[256];
         char r[256];
@@ -122,11 +142,13 @@ void stelutze0(){
         printf("rez= %s\n", a );
 }
 
- void palindrom(){
+void palindrom()
+{
          printf("NU MERE INCA\n");
- }
+}
 
-  void sufix_comun(){
+void sufix_comun()
+{
         char a[256], b[256];
         int ka,kb,d;
         printf("s1= ");
@@ -145,9 +167,10 @@ void stelutze0(){
         while(ka<d-1){
                 printf("%c",a[++ka]);
         }printf("\"\n");
-  }
+}
 
-  void G68(){
+void G68()
+{
         char a[256];
         int N;
         int r0;
@@ -161,10 +184,11 @@ void stelutze0(){
 
                 }
         }
-  }
+}
 
 /// DISPECERAT ///
-int getc(){
+int getc()
+{
 char C[20];
 cout<<">";
 cin>>C;
@@ -172,9 +196,11 @@ cin>>C;
         if (strstr(C,                    "Q!")){
                 return 0;
         } else if (strstr(C,            "TEST")){
-                TEST();}
-         else if (strstr(C,             "rw2m")){
+                TEST();
+        } else if (strstr(C,             "rw2m")){
                 rw2m();
+        } else if (strstr(C,             "v2UPPER")){
+               v2UPPER();
         } else if (strstr(C,            "palindrom")){
                 palindrom();
         } else if (strstr(C,            "sufix_comun")){
