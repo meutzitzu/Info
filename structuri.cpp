@@ -16,15 +16,15 @@ void cplxcalc()
                 double i;
         } z1;
         cplx z2, zr;
-        char op;
+        char op, c;
         printf("Z1= ");
-        scanf("%lf %lf", z1.r, z1.i );
+         scanf("%lf %c %lf", z1.r, c, z1.i );
         printf("Z2= ");
-        printf("%lf %lf", z1.r, z1.i );
+        printf("%lf %c %lf", z1.r, c, z1.i );
         //scanf("%c", op );
         //scanf("%d", z1.r);
         //if()
-        printf();
+        printf("%2f", z1.r);
 }
 
 
