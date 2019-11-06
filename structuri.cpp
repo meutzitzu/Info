@@ -27,6 +27,28 @@ void cplxcalc()
         printf("%2f", z1.r);
 }
 
+void binN(){
+
+
+
+        struct
+
+        printf("%d ", T0.N );
+}
+
+struct V2 {
+        uint16 i;
+        uint16 j;
+        int v;
+};
+
+void Mrara(){
+        struct V2 [256];
+        
+
+
+
+}
 
 int main ()
 {
@@ -38,10 +60,16 @@ while(q){
 
         if (strstr(C,                    "Q!")){
                 q=0;
+        } else if (strstr(C,            "help")){
+                printf("\n cplx - calculator numere complexe \n binN - binomul lui Newton \n", );
         } else if (strstr(C,            "TEST")){
                 TEST();
         } else if (strstr(C,            "cplx")){
                 cplxcalc();
+        } else if (strstr(C,            "binn")){
+                binN();
+        } else if (strstr(C,            "mrara")){
+                Mrara();
         } else if (strstr(C,            "/pol/")){
                 printf("Hitler did nothing wrong");
         } else
