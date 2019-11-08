@@ -31,24 +31,35 @@ void binN(){
 
 
 
-        struct
+        //struct
 
-        printf("%d ", T0.N );
+        //printf("%d ", T0.N );
 }
 
 struct V2 {
-        uint16 i;
-        uint16 j;
+        uint8_t i;
+        uint8_t j;
         int v;
 };
 
 void Mrara(){
-        struct V2 [256];
-        
+        V2 arr [256];
+        scanf("%d %d %d", &arr[0].i, &arr[0].j, &arr[0].v );
+        printf("\nv= %d", arr[0].v);
+
+
+}
+
+
+void TzCap()
+{
+        //struct TC {
+
 
 
 
 }
+
 
 int main ()
 {
@@ -59,9 +70,9 @@ while(q){
         scanf("%s", C);
 
         if (strstr(C,                    "Q!")){
-                q=0;
+                //q=0;
         } else if (strstr(C,            "help")){
-                printf("\n cplx - calculator numere complexe \n binN - binomul lui Newton \n", );
+                printf("\n cplx - calculator numere complexe \n binN - binomul lui Newton \n");
         } else if (strstr(C,            "TEST")){
                 TEST();
         } else if (strstr(C,            "cplx")){
@@ -70,6 +81,8 @@ while(q){
                 binN();
         } else if (strstr(C,            "mrara")){
                 Mrara();
+        } else if (strstr(C,            "tzcap")){
+                TzCap();
         } else if (strstr(C,            "/pol/")){
                 printf("Hitler did nothing wrong");
         } else
