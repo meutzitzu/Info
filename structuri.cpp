@@ -1,8 +1,10 @@
 #include <iostream>
 #include <fstream>
-#include <string.h>
+#include <cstring>
+#include <cstdlib>
 
 using namespace std;
+
 
 void TEST()
 {
@@ -43,20 +45,21 @@ struct V2 {
 };
 
 void Mrara(){
+        FILE *fin;
+        fin = fopen("./date.in", "r");
         V2 arr [256];
+        char s[256];
+        uint N;
+        for(int k = 0; k < n; k++){
         scanf("%d %d %d", &arr[0].i, &arr[0].j, &arr[0].v );
+        }
         printf("\nv= %d", arr[0].v);
-
-
 }
+
 
 
 void TzCap()
 {
-        //struct TC {
-
-
-
 
 }
 
@@ -65,6 +68,7 @@ int main ()
 {
 char C[256];
 char q='r';
+
 while(q){
         printf("\n>");
         scanf("%s", C);
