@@ -49,11 +49,18 @@ void Mrara(){
         fin = fopen("./date.in", "r");
         V2 arr [256];
         char s[256];
-        uint N;
-        for(int k = 0; k < n; k++){
-        scanf("%d %d %d", &arr[0].i, &arr[0].j, &arr[0].v );
+        uint32 N, k;
+        uint32 maxi = 0 , maxj = 0;
+        scanf("%d", N);
+        for( k = 0; k < N; k++){
+                scanf("%d %d %d", &arr[0].i, &arr[0].j, &arr[0].v );
         }
-        printf("\nv= %d", arr[0].v);
+        for( k = 0; k < N; k++){
+                maxi = max(arr[0].i, maxi);
+                maxj = max(arr[0].j, maxj);
+        }
+
+
 }
 
 
