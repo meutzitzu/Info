@@ -6,6 +6,44 @@
 using namespace std;
 
 
+struct comanda {
+        char cod[256];
+        int greutate;
+        int pret;
+        int cantitate;
+        int valoare;
+        int greutate_totala;
+}
+
+int caut(char destinatie[]){
+        for(int i=1;i<=n;i++){
+                if()
+        }
+}
+
+void constructie(){
+        for (int i =1; i <=n; i++){
+                int poz = caut(a[i].destinatie);
+                if(poz == -1) {
+                        m++;
+                        strcpy(b[m].destinatie, a[i].destinatie);
+                        b[m].valoare = a[i].pret * a[i].cantitate;
+                        b[m].greutate_totala = a[i].greutate * a[i].cantitate;
+
+                } else {
+                        b[poz].valoare = b[poz].valoare + a[i];
+                        b[poz].greutate_totala = b[poz].greutate * b[poz].cantitate;
+                }
+        }
+}
+
+
+
+void com(){
+
+}
+
+
 void TEST()
 {
 
