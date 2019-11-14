@@ -15,34 +15,18 @@ struct comanda {
         int greutate_totala;
 }
 
-int caut(char destinatie[]){
-        for(int i=1;i<=n;i++){
-                if()
+
+struct fr.r()
+
+int cmmdc(int a, int b)
+{
+        while(b>0){
+                r = a % b;
+                a = b;
+                b = r;
         }
+        return b;
 }
-
-void constructie(){
-        for (int i =1; i <=n; i++){
-                int poz = caut(a[i].destinatie);
-                if(poz == -1) {
-                        m++;
-                        strcpy(b[m].destinatie, a[i].destinatie);
-                        b[m].valoare = a[i].pret * a[i].cantitate;
-                        b[m].greutate_totala = a[i].greutate * a[i].cantitate;
-
-                } else {
-                        b[poz].valoare = b[poz].valoare + a[i];
-                        b[poz].greutate_totala = b[poz].greutate * b[poz].cantitate;
-                }
-        }
-}
-
-
-
-void com(){
-
-}
-
 
 void TEST()
 {
@@ -82,6 +66,17 @@ struct V2 {
         int v;
 };
 
+struct fr{
+        int n;
+        int d;
+};
+
+struct fr.red( struct fr F)
+{
+        F.n/=cmmdc(F.n, F.d);
+        F.d/=cmmdc(F.n, F.d);
+}
+
 void Mrara(){
         FILE *fin;
         fin = fopen("./date.in", "r");
@@ -109,6 +104,7 @@ void TzCap()
 }
 
 
+
 int main ()
 {
 char C[256];
@@ -125,6 +121,8 @@ while(q){
         } else if (strstr(C,            "TEST")){
                 TEST();
         } else if (strstr(C,            "cplx")){
+                cplxcalc();
+        } else if (strstr(C,            "cmmdc")){
                 cplxcalc();
         } else if (strstr(C,            "binn")){
                 binN();
