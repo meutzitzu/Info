@@ -5,6 +5,21 @@
 
 using namespace std;
 
+int cmmdc(int a, int b)
+{
+        int r;
+        while(b>0){
+                r = a % b;
+                a = b;
+                b = r;
+        }
+        return b;
+}
+
+struct fr{
+        int n;
+        int d;
+};
 
 struct comanda {
         char cod[256];
@@ -13,20 +28,15 @@ struct comanda {
         int cantitate;
         int valoare;
         int greutate_totala;
-}
+};
 
 
-struct fr.r()
-
-int cmmdc(int a, int b)
+fr frRed(struct fr F)
 {
-        while(b>0){
-                r = a % b;
-                a = b;
-                b = r;
-        }
-        return b;
+        F.n /= cmmdc(F.n, F.d);
+        F.d /= cmmdc(F.n, F.d);
 }
+
 
 void TEST()
 {
@@ -66,37 +76,50 @@ struct V2 {
         int v;
 };
 
-struct fr{
-        int n;
-        int d;
-};
 
-struct fr.red( struct fr F)
-{
-        F.n/=cmmdc(F.n, F.d);
-        F.d/=cmmdc(F.n, F.d);
-}
+
 
 void Mrara(){
         FILE *fin;
         fin = fopen("./date.in", "r");
         V2 arr [256];
         char s[256];
-        uint32 N, k;
-        uint32 maxi = 0 , maxj = 0;
-        scanf("%d", N);
-        for( k = 0; k < N; k++){
-                scanf("%d %d %d", &arr[0].i, &arr[0].j, &arr[0].v );
+        uint32_t N, k, i, j;
+        uint32_t maxi = 0 , maxj = 0;
+        scanf("%u", &N);
+        for( k = 0; k <= N; k++){
+                fscanf(fin, "%u %u %d", &arr[0].i, &arr[0].j, &arr[0].v );
         }
         for( k = 0; k < N; k++){
-                maxi = max(arr[0].i, maxi);
-                maxj = max(arr[0].j, maxj);
+                maxi = max( (uint32_t)arr[0].i, maxi);
+                maxj = max( (uint32_t)arr[0].j, maxj);
         }
-
-
+        printf("maxi = %u \nmaxj = %u \n",maxi, maxj );
+        int m[maxi][maxj];
+        for( i =0; i <= maxi; i++){
+                for( j =0; j <= maxj; j++){
+                        m[i][j] = 0;
+                }
+        }
+        for( k = 0; k <= N; k++ ){
+                i = arr[k].i;
+                j = arr[k].j;
+                m[i][j] = arr[k].v;
+                printf("%u %u\n", i, j );
+        }
+        printf("MERE\n");
+        for( i =0; i <= maxi; i++){
+                for( j =0; j <= maxj; j++){
+                        printf("%d ", m[i][j]);
+                }
+                printf("\n");
+        }
 }
 
+void admit ()
+{
 
+}
 
 void TzCap()
 {
@@ -122,6 +145,8 @@ while(q){
                 TEST();
         } else if (strstr(C,            "cplx")){
                 cplxcalc();
+        } else if (strstr(C,            "admit")){
+                admit();
         } else if (strstr(C,            "cmmdc")){
                 cplxcalc();
         } else if (strstr(C,            "binn")){
