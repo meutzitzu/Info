@@ -84,32 +84,39 @@ void Mrara(){
         fin = fopen("./date.in", "r");
         V2 arr [256];
         char s[256];
-        uint32_t N, k, i, j;
-        uint32_t maxi = 0 , maxj = 0;
+        uint32_t N, k;
+        uint8_t  i, j;
+        uint8_t maxi = 0 , maxj = 0;
         scanf("%u", &N);
-        for( k = 0; k <= N; k++){
-                fscanf(fin, "%u %u %d", &arr[0].i, &arr[0].j, &arr[0].v );
+        for( k = 0; k < N; k++){
+                fscanf(fin, "%u %u %d\n", &arr[k].i, &arr[k].j, &arr[k].v );
+                arr[k].i--;
+                arr[k].j--;
+                //printf("%u %u %d\n", arr[k].i, arr[k].j, arr[k].v );
         }
         for( k = 0; k < N; k++){
-                maxi = max( (uint32_t)arr[0].i, maxi);
-                maxj = max( (uint32_t)arr[0].j, maxj);
+                ///*
+                maxi = max( arr[k].i, maxi);
+                maxj = max( arr[k].j, maxj);
+                //*/
         }
-        printf("maxi = %u \nmaxj = %u \n",maxi, maxj );
-        int m[maxi][maxj];
-        for( i =0; i <= maxi; i++){
-                for( j =0; j <= maxj; j++){
+        //printf("maxi = %u \nmaxj = %u \n", maxi, maxj );
+        int m[maxi ++][maxj ++];
+        for( i =0; i < maxi; i++){
+                for( j =0; j < maxj; j++){
                         m[i][j] = 0;
                 }
         }
-        for( k = 0; k <= N; k++ ){
+        for( k = 0; k < N; k++ ){
                 i = arr[k].i;
                 j = arr[k].j;
                 m[i][j] = arr[k].v;
-                printf("%u %u\n", i, j );
+                //printf("%u %u\n", i, j );
         }
-        printf("MERE\n");
-        for( i =0; i <= maxi; i++){
-                for( j =0; j <= maxj; j++){
+        //printf("MERE\n");
+        printf("\n");
+        for( i =0; i < maxi; i++){
+                for( j =0; j < maxj; j++){
                         printf("%d ", m[i][j]);
                 }
                 printf("\n");
@@ -135,7 +142,7 @@ char q='r';
 
 while(q){
         printf("\n>");
-        scanf("%s", C);
+        scanf("%s", &C);
 
         if (strstr(C,                    "Q!")){
                 //q=0;
