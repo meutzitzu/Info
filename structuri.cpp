@@ -5,6 +5,23 @@
 
 using namespace std;
 
+struct fr{
+        int n;
+        int d;
+};
+struct cplx {
+        double r;
+        double i;
+};
+struct comanda {
+        char cod[256];
+        int greutate;
+        int pret;
+        int cantitate;
+        int valoare;
+        int greutate_totala;
+};
+
 int cmmdc(int a, int b)
 {
         int r;
@@ -15,21 +32,6 @@ int cmmdc(int a, int b)
         }
         return b;
 }
-
-struct fr{
-        int n;
-        int d;
-};
-
-struct comanda {
-        char cod[256];
-        int greutate;
-        int pret;
-        int cantitate;
-        int valoare;
-        int greutate_totala;
-};
-
 
 fr frRed(struct fr F)
 {
@@ -45,16 +47,13 @@ void TEST()
 
 void cplxcalc()
 {
-        struct cplx {
-                double r;
-                double i;
-        } z1;
+        cplx z1;
         cplx z2, zr;
         char op, c;
         printf("Z1= ");
-         scanf("%lf %c %lf", z1.r, c, z1.i );
+        scanf("%.2f %c %.2f", &z1.r, &c, &z1.i );
         printf("Z2= ");
-        printf("%lf %c %lf", z1.r, c, z1.i );
+        printf("%.2f %c %.2f", &z1.r, &c, &z1.i );
         //scanf("%c", op );
         //scanf("%d", z1.r);
         //if()
@@ -83,16 +82,23 @@ void Mrara(){
         FILE *fin;
         fin = fopen("./date.in", "r");
         V2 arr [256];
-        char s[256];
+        char buffer[8];
         uint32_t N, k;
         uint8_t  i, j;
         uint8_t maxi = 0 , maxj = 0;
         scanf("%u", &N);
+        /*
         for( k = 0; k < N; k++){
                 fscanf(fin, "%u %u %d\n", &arr[k].i, &arr[k].j, &arr[k].v );
                 arr[k].i--;
                 arr[k].j--;
                 //printf("%u %u %d\n", arr[k].i, arr[k].j, arr[k].v );
+        }
+        */
+        while (fscanf(fin, "%u %u %d", &arr[++k].i, &arr[k].j, &arr[k].v ) == 1)
+        {
+                printf("parsing ... %s\n", buffer);
+                getc(fin);
         }
         for( k = 0; k < N; k++){
                 ///*
@@ -123,15 +129,7 @@ void Mrara(){
         }
 }
 
-void admit ()
-{
 
-}
-
-void TzCap()
-{
-
-}
 
 
 
@@ -152,16 +150,10 @@ while(q){
                 TEST();
         } else if (strstr(C,            "cplx")){
                 cplxcalc();
-        } else if (strstr(C,            "admit")){
-                admit();
-        } else if (strstr(C,            "cmmdc")){
-                cplxcalc();
         } else if (strstr(C,            "binn")){
                 binN();
         } else if (strstr(C,            "mrara")){
                 Mrara();
-        } else if (strstr(C,            "tzcap")){
-                TzCap();
         } else if (strstr(C,            "/pol/")){
                 printf("Hitler did nothing wrong");
         } else
