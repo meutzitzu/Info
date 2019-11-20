@@ -83,7 +83,7 @@ void Mrara(){
         fin = fopen("./date.in", "r");
         V2 arr [256];
         char buffer[8];
-        uint32_t N, k;
+        uint32_t N, k=0;
         uint8_t  i, j;
         uint8_t maxi = 0 , maxj = 0;
         scanf("%u", &N);
@@ -95,16 +95,20 @@ void Mrara(){
                 //printf("%u %u %d\n", arr[k].i, arr[k].j, arr[k].v );
         }
         */
-        while (fscanf(fin, "%u %u %d", &arr[++k].i, &arr[k].j, &arr[k].v ) == 1)
+        while ( k < 5 )
         {
-                printf("parsing ... %s\n", buffer);
-                getc(fin);
+                fscanf(fin, "%u %u %d\n", &arr[k].i, &arr[k].j, &arr[k].v );
+                //printf("MERE\n");
+                printf("%u %u %d\n", arr[k].i, arr[k].j, arr[k].v );
+                //fgetc(fin);
+                k++;
         }
+        /*
         for( k = 0; k < N; k++){
-                ///*
+
                 maxi = max( arr[k].i, maxi);
                 maxj = max( arr[k].j, maxj);
-                //*/
+
         }
         //printf("maxi = %u \nmaxj = %u \n", maxi, maxj );
         int m[maxi ++][maxj ++];
@@ -119,7 +123,6 @@ void Mrara(){
                 m[i][j] = arr[k].v;
                 //printf("%u %u\n", i, j );
         }
-        //printf("MERE\n");
         printf("\n");
         for( i =0; i < maxi; i++){
                 for( j =0; j < maxj; j++){
@@ -127,6 +130,7 @@ void Mrara(){
                 }
                 printf("\n");
         }
+        */
 }
 
 
