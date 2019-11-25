@@ -15,13 +15,15 @@ int Rfibb( int n )
         }
 }
 
+
 void Cfibb()
 {
         int n;
         scanf("%d", &n );
         //printf("%d\n", n );
-        printf("%d", Rfibb(n) );
+        printf(" %d", Rfibb(n) );
 }
+
 
 int prim(int n, int d)
 {
@@ -37,24 +39,25 @@ int prim(int n, int d)
         }
 }
 
+
 void Cprim ()
 {
         int n;
         scanf("%d", &n );
-        printf("%d", prim(n,2));
+        printf(" %d", prim(n,2));
 }
+
 
 int main ()
 {
 char C[256];
 char q='r';
 
+printf("\n>");
 while(q){
-        printf("\n>");
-        scanf("%s", &C);
-
-        if (strstr(C,                    "Q!")){
-                //q=0;
+        scanf("%255s", &C);
+        if (strstr(C,                    "quit")){
+                q=0;
         } else if (strstr(C,            "help")){
                 printf("\n cplx - calculator numere complexe \n binN - binomul lui Newton \n");
         } else if (strstr(C,            "TEST")){
@@ -66,9 +69,9 @@ while(q){
         } else if (strstr(C,            "mrara")){
                 //Mrara();
         } else if (strstr(C,            "/pol/")){
-                printf("Hitler did nothing wrong");
+                printf("Hitler did nothing wrong\n");
         } else
-                printf("type \"help\" for a list of commands");
+                printf("type \"help\" for a list of commands\n");
         }
 
 }

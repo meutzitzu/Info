@@ -21,6 +21,11 @@ struct comanda {
         int valoare;
         int greutate_totala;
 };
+struct Vuud {
+        uint8_t i;
+        uint8_t j;
+        int v;
+};
 
 int cmmdc(int a, int b)
 {
@@ -33,6 +38,7 @@ int cmmdc(int a, int b)
         return b;
 }
 
+
 fr frRed(struct fr F)
 {
         F.n /= cmmdc(F.n, F.d);
@@ -44,6 +50,7 @@ void TEST()
 {
 
 }
+
 
 void cplxcalc()
 {
@@ -60,6 +67,7 @@ void cplxcalc()
         printf("%2f", z1.r);
 }
 
+
 void binN(){
 
 
@@ -69,48 +77,25 @@ void binN(){
         //printf("%d ", T0.N );
 }
 
-struct V2 {
-        uint8_t i;
-        uint8_t j;
-        int v;
-};
 
-
-
-
-void Mrara(){
+void Mrara()
+{
         FILE *fin;
         fin = fopen("./date.in", "r");
-        V2 arr [256];
+        Vuud arr [256];
         char buffer[8];
         uint32_t N, k=0;
         uint8_t  i, j;
         uint8_t maxi = 0 , maxj = 0;
-        scanf("%u", &N);
-        /*
-        for( k = 0; k < N; k++){
-                fscanf(fin, "%u %u %d\n", &arr[k].i, &arr[k].j, &arr[k].v );
-                arr[k].i--;
-                arr[k].j--;
-                //printf("%u %u %d\n", arr[k].i, arr[k].j, arr[k].v );
-        }
-        */
-        while ( k < 5 )
-        {
-                fscanf(fin, "%u %u %d\n", &arr[k].i, &arr[k].j, &arr[k].v );
-                //printf("MERE\n");
-                printf("%u %u %d\n", arr[k].i, arr[k].j, arr[k].v );
-                //fgetc(fin);
+
+        while(fscanf(fin, "%u %u %d\n", &arr[k].i, &arr[k].j, &arr[k].v ) == 3){
                 k++;
         }
-        /*
+        N = k;
         for( k = 0; k < N; k++){
-
                 maxi = max( arr[k].i, maxi);
                 maxj = max( arr[k].j, maxj);
-
         }
-        //printf("maxi = %u \nmaxj = %u \n", maxi, maxj );
         int m[maxi ++][maxj ++];
         for( i =0; i < maxi; i++){
                 for( j =0; j < maxj; j++){
@@ -121,7 +106,6 @@ void Mrara(){
                 i = arr[k].i;
                 j = arr[k].j;
                 m[i][j] = arr[k].v;
-                //printf("%u %u\n", i, j );
         }
         printf("\n");
         for( i =0; i < maxi; i++){
@@ -130,11 +114,7 @@ void Mrara(){
                 }
                 printf("\n");
         }
-        */
 }
-
-
-
 
 
 int main ()

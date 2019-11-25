@@ -249,3 +249,6 @@ ex:
                 /  f(n-1) + f(n-2) , n>2
         f(n) =  |  n, n==1||n==0
                 \
+
+
+                afisarea la apel se face la revenire, in ordine inversa
