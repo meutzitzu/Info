@@ -126,8 +126,8 @@ while(q){
         printf("\n>");
         scanf("%s", &C);
 
-        if (strstr(C,                    "Q!")){
-                //q=0;
+        if (strstr(C,                    "quit")){
+                q=0;
         } else if (strstr(C,            "help")){
                 printf("\n cplx - calculator numere complexe \n binN - binomul lui Newton \n");
         } else if (strstr(C,            "TEST")){
