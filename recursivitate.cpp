@@ -15,6 +15,32 @@ int Rfibb( int n )
         }
 }
 
+int cifctrl(int n, int s)
+{
+        if( n == 0)
+                if(s < 10)
+                        return s;
+                else
+                        return cifctrl( s, 0);
+
+        else
+                return cifctrl( n /10, s + n %10);
+}
+
+int cifctrl2( int n)
+{
+        if( n %9 == 0)
+                return 9;
+        else
+                return n%9;
+}
+
+void Ccifctrl()
+{
+        int N;
+        scanf("%d", &N);
+        printf("\n%d\n", cifctrl2(N) );
+}
 
 void Cfibb()
 {
@@ -62,6 +88,8 @@ while(q){
                 printf("\n cplx - calculator numere complexe \n binN - binomul lui Newton \n");
         } else if (strstr(C,            "TEST")){
                 //TEST();
+        } else if (strstr(C,            "cifctrl")){
+                Ccifctrl();
         } else if (strstr(C,            "fibb")){
                 Cfibb();
         } else if (strstr(C,            "prim")){

@@ -9,6 +9,7 @@ struct fr{
         int n;
         int d;
 };
+
 struct cplx {
         double r;
         double i;
@@ -27,6 +28,14 @@ struct Vuud {
         int v;
 };
 
+struct tranz {
+        char n[256];
+        int32_t q;
+        float p;
+        uint8_t z;
+        double v;
+};
+
 int cmmdc(int a, int b)
 {
         int r;
@@ -39,33 +48,12 @@ int cmmdc(int a, int b)
 }
 
 
-fr frRed(struct fr F)
-{
-        F.n /= cmmdc(F.n, F.d);
-        F.d /= cmmdc(F.n, F.d);
-}
-
-
 void TEST()
 {
 
 }
 
 
-void cplxcalc()
-{
-        cplx z1;
-        cplx z2, zr;
-        char op, c;
-        printf("Z1= ");
-        scanf("%.2f %c %.2f", &z1.r, &c, &z1.i );
-        printf("Z2= ");
-        printf("%.2f %c %.2f", &z1.r, &c, &z1.i );
-        //scanf("%c", op );
-        //scanf("%d", z1.r);
-        //if()
-        printf("%2f", z1.r);
-}
 
 
 void binN(){
@@ -77,6 +65,19 @@ void binN(){
         //printf("%d ", T0.N );
 }
 
+
+void tranz ()
+{
+        FILE *fin;
+        fin = fopen("./date.in", "r");
+        tranz arr [256];
+        int k = 0;
+        while (fscanf( fin, "%255s %d %f %u ", &arr[k].n, &arr[k].q, &arr[k].p, &arr[k].z ) == 4) {
+                printf("%255s %d %f %u ", &arr[k].n, &arr[k].q, &arr[k].p, &arr[k].z );
+                k++;
+        }
+
+}
 
 void Mrara()
 {
@@ -132,6 +133,8 @@ while(q){
                 printf("\n cplx - calculator numere complexe \n binN - binomul lui Newton \n");
         } else if (strstr(C,            "TEST")){
                 TEST();
+        } else if (strstr(C,            "tranz")){
+                tranz();
         } else if (strstr(C,            "cplx")){
                 cplxcalc();
         } else if (strstr(C,            "binn")){

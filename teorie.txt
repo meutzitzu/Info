@@ -252,3 +252,47 @@ ex:
 
 
                 afisarea la apel se face la revenire, in ordine inversa
+
+                int cmmdc( int a, int b )
+                {
+                        if (b!=0)
+                                return cmmdc(b, a%b);
+                        else
+                                return a;
+                }
+
+                int pow( int a, int b)
+                {
+                if( b == 0)
+                        return 1;
+                else return pow(a, b-1)*a ;
+                }
+
+                int sumdiv ( int n, int d)
+                {
+                        if( d > n)
+                                return 0;
+                        else if( n % d == 0)
+                                return d+ sumdiv(n, d+1);
+                        else return sumdiv (n, d+1)
+                }
+
+                int cifctrl(int n, int s)
+                {
+                        if( n == 0)
+                                if(s < 10)
+                                        return s;
+                                else
+                                        return cifctrl( s, 0);
+
+                        else
+                                return cifctrl( n /10, s + n %10);
+                }
+                
+                int cifctrl2( int n)
+                {
+                        if( n %9 == 0)
+                                return 9;
+                        else
+                                return n%9;
+                }
