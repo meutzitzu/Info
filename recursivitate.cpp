@@ -50,7 +50,6 @@ void Cfibb()
         printf(" %d", Rfibb(n) );
 }
 
-
 int prim(int n, int d)
 {
         //printf("MERE");
@@ -65,7 +64,6 @@ int prim(int n, int d)
         }
 }
 
-
 void Cprim ()
 {
         int n;
@@ -73,11 +71,15 @@ void Cprim ()
         printf(" %d", prim(n,2));
 }
 
-
 int main ()
 {
 char C[256];
 char q='r';
+
+int palindrom()
+{
+        
+}
 
 printf("\n>");
 while(q){
@@ -85,7 +87,7 @@ while(q){
         if (strstr(C,                    "quit")){
                 q=0;
         } else if (strstr(C,            "help")){
-                printf("\n cplx - calculator numere complexe \n binN - binomul lui Newton \n");
+                printf("\n cplx - calculator numere complexe\n binN - binomul lui Newton\n cifctrl - cifra de control\n fibb - al n-lea termen din sirul lui Fibbonaci\n prim - daca un nr este prima\n");
         } else if (strstr(C,            "TEST")){
                 //TEST();
         } else if (strstr(C,            "cifctrl")){
@@ -94,12 +96,10 @@ while(q){
                 Cfibb();
         } else if (strstr(C,            "prim")){
                 Cprim();
-        } else if (strstr(C,            "mrara")){
-                //Mrara();
         } else if (strstr(C,            "/pol/")){
-                printf("Hitler did nothing wrong\n");
+                printf("\nHitler did nothing wrong\n");
         } else
-                printf("type \"help\" for a list of commands\n");
+                printf("\ntype \"help\" for a list of commands\n");
         }
 
 }
