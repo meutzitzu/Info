@@ -50,6 +50,13 @@ void Cfibb()
         printf(" %d", Rfibb(n) );
 }
 
+int cmmdc( int a, int b)
+{
+        if(b>0)
+                return cmmdc(b, a%b);
+        else return a;
+}
+
 int prim(int n, int d)
 {
         //printf("MERE");
@@ -64,6 +71,13 @@ int prim(int n, int d)
         }
 }
 
+void Ccmmdc()
+{
+        int a, b;
+        scanf("%d %d", &a, &b);
+        printf("\n%d", cmmdc(a,b) );
+}
+
 void Cprim ()
 {
         int n;
@@ -71,15 +85,16 @@ void Cprim ()
         printf(" %d", prim(n,2));
 }
 
+int palindrom()
+{
+
+}
+
 int main ()
 {
 char C[256];
 char q='r';
 
-int palindrom()
-{
-        
-}
 
 printf("\n>");
 while(q){
@@ -96,6 +111,8 @@ while(q){
                 Cfibb();
         } else if (strstr(C,            "prim")){
                 Cprim();
+        } else if (strstr(C,            "cmmdc")){
+                Ccmmdc();
         } else if (strstr(C,            "/pol/")){
                 printf("\nHitler did nothing wrong\n");
         } else
