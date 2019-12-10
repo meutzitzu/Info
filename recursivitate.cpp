@@ -57,6 +57,18 @@ int cmmdc( int a, int b)
         else return a;
 }
 
+int max2cif(int n, int nr){
+        if(n%10>=n/10%10)
+                nr = max(nr, n%100);
+        //printf("\n%d %d",n, nr );
+        if(n<9)
+                return nr;
+        else
+                return max2cif(n/10, nr);
+}
+
+
+
 int prim(int n, int d)
 {
         //printf("MERE");
@@ -78,11 +90,22 @@ void Ccmmdc()
         printf("\n%d", cmmdc(a,b) );
 }
 
-void Cprim ()
+void Cmax2cif()
 {
         int n;
+        scanf("%d", &n);
+        printf("\n%d", max2cif(n, 0));
+}
+
+void Cprim ()
+{
+        int n, m;
         scanf("%d", &n );
-        printf(" %d", prim(n,2));
+        if(scanf(",")){
+                scanf("%d", &m);
+                printf(" %d", iprim(n,m,2));
+        } else
+                printf(" %d", prim(n,2));
 }
 
 int palindrom()
@@ -111,6 +134,8 @@ while(q){
                 Cfibb();
         } else if (strstr(C,            "prim")){
                 Cprim();
+        } else if (strstr(C,            "max2cif")){
+                Cmax2cif();
         } else if (strstr(C,            "cmmdc")){
                 Ccmmdc();
         } else if (strstr(C,            "/pol/")){
