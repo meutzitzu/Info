@@ -9,6 +9,10 @@ int main ()
         char s1[32];
         char s2[32];
 
-        scanf("%32s %32s", &s1, &s2);
-        printf("%d\n", strcmp(s1, s2));
+        ss(2, s1, 1);
+        ps(2, s1, 1);
+
+        printf("%f\n", f(1,2) );
+
+return 0;
 }
