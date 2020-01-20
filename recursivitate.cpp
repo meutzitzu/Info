@@ -2,6 +2,7 @@
 #include <fstream>
 #include <cstring>
 #include <cstdlib>
+#include <cmath>
 
 using namespace std;
 
@@ -15,7 +16,7 @@ int Rfibb( int n )
         }
 }
 
-int cifctrl(int n, int s)
+int cifctrl(int n, int s =0 )
 {
         if( n == 0)
                 if(s < 10)
@@ -33,21 +34,6 @@ int cifctrl2( int n)
                 return 9;
         else
                 return n%9;
-}
-
-void Ccifctrl()
-{
-        int N;
-        scanf("%d", &N);
-        printf("\n%d\n", cifctrl2(N) );
-}
-
-void Cfibb()
-{
-        int n;
-        scanf("%d", &n );
-        //printf("%d\n", n );
-        printf(" %d", Rfibb(n) );
 }
 
 int cmmdc( int a, int b)
@@ -69,44 +55,23 @@ int max2cif(int n, int nr){
 
 
 
-int prim(int n, int d)
+int prim(int n, int d=2)
 {
-        //printf("MERE");
         if( n%d==0 || n<2 ){
                 return 0;
         }
-        if( d<=n/2 ){
+        if( d<=sqrt(n) ){
                 return prim(n,d+1);
-        //        printf("%d ", d );
         } else {
                 return 1;
         }
 }
 
-void Ccmmdc()
-{
-        int a, b;
-        scanf("%d %d", &a, &b);
-        printf("\n%d", cmmdc(a,b) );
-}
 
-void Cmax2cif()
-{
-        int n;
-        scanf("%d", &n);
-        printf("\n%d", max2cif(n, 0));
-}
 
-void Cprim ()
-{
-        int n, m;
-        scanf("%d", &n );
-        if(scanf(",")){
-                scanf("%d", &m);
-                printf(" %d", iprim(n,m,2));
-        } else
-                printf(" %d", prim(n,2));
-}
+
+
+
 
 int palindrom()
 {
@@ -129,15 +94,15 @@ while(q){
         } else if (strstr(C,            "TEST")){
                 //TEST();
         } else if (strstr(C,            "cifctrl")){
-                Ccifctrl();
+                cifctrl();
         } else if (strstr(C,            "fibb")){
-                Cfibb();
+                fibb();
         } else if (strstr(C,            "prim")){
-                Cprim();
+                prim();
         } else if (strstr(C,            "max2cif")){
-                Cmax2cif();
+                max2cif();
         } else if (strstr(C,            "cmmdc")){
-                Ccmmdc();
+                cmmdc();
         } else if (strstr(C,            "/pol/")){
                 printf("\nHitler did nothing wrong\n");
         } else
