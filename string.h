@@ -81,7 +81,7 @@ double w_f(f_args in)
         double x_out = in.x ? in.x : 3.14;
         return f(i_out, x_out);
 }
-#define f(...) w_f((f_args){__VA_ARGS__}); 
+#define f(...) w_f((f_args){__VA_ARGS__});
 
 
-#endif // STRING_H_INCLUDED
+#endif  STRING_H_INCLUDED
