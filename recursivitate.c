@@ -11,7 +11,7 @@ int main()
         rd_arr(arr, n);
         pd_arr(arr, n);
 
-        
+
 
         return 0;
 }

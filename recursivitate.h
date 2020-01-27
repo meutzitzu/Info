@@ -1,7 +1,7 @@
 #ifndef RECURSIVITATE_H_INCLUDED
 #define RECURSIVITATE_H_INCLUDED
 
-void rd_arr( int arr[], unsigned int n, FILE*)
+void rd_arr( int arr[], unsigned int n, )
 {
         if(n>0){
                 rnd_arr(arr, --n);
@@ -27,7 +27,7 @@ void base_rd_arr_f(int arr[], int n, fin)
 
 void rd_arr_f()
 {
-        
+
 }
 
 
