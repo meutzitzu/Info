@@ -1,4 +1,3 @@
-
 #ifndef RECURSIVITATE_H_INCLUDED
 #define RECURSIVITATE_H_INCLUDED
 
@@ -24,7 +23,7 @@ void base_rd_arr_f(int arr[], char fname[32])
         FILE* fin;
         fin = fopen(fname, "r");
         rd_arr_f(arr, 1, fin);
-        
+
 }
 
 void rd_arr_f(int arr[], unsigned int n, FILE *fin)

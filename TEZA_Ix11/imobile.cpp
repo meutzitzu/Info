@@ -28,7 +28,7 @@ void citire(){
         int k = 0;
         while( fscanf(fin, "%u %u %u %u %[^\n]s", &li[k].tip, &li[k].nrc, &li[k].sup, &li[k].pre, &li[k].car ) == 5){
                 k++;
-                //li[k].pmp= li[k].pre / li[k].sup;
+                li[k].pmp= (float)((float)li[k].pre / (float)li[k].sup);
         }
         N = k;
         printf("\nCITIREA MERE\n");
@@ -65,7 +65,7 @@ void afisareA()
 
 void sortare()
 {
-        for(int i=0;i<N;i++)
+        for(int i=0; i<N; i++)
         {
                 int imin=i;
                 for(int j=i+1; j<N; j++){
@@ -75,7 +75,7 @@ void sortare()
                 }
                 imobil aux=li[imin];
                 while (imin>i){
-                        swapimo(li[imin], li[imin--]);
+                        swapimo(li[imin], li[--imin]);
                 }
                 swapimo(li[i], aux);
         }
