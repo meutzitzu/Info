@@ -12,7 +12,7 @@ int main()
         base_rd_arr(arr, s);
         pd_arr(arr, arr[0]);
 
-
+        for()
 
         return 0;
 }
