@@ -42,7 +42,7 @@ void bt( int k)
                 x[k]=i;
                 sum[k]=sum[k-1]+i;
                 if(corect(k)){
-                        if(k==n)afis_apar(k);
+                        if(k==n)afis(k);
                                 else bt(k+1);
                 }
         }
@@ -60,7 +60,7 @@ int main()
         int     x[10],
                 sum[10];
         scanf("%d %d", &n, &S );
-        def_ix();
+        //def_ix();
         bt(1);
 
         return 0;
