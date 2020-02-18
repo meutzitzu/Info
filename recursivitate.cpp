@@ -2,6 +2,7 @@
 #include <fstream>
 #include <cstring>
 #include <cstdlib>
+#include <cmath>
 
 using namespace std;
 
@@ -15,7 +16,7 @@ int Rfibb( int n )
         }
 }
 
-int cifctrl(int n, int s)
+int cifctrl(int n, int s =0 )
 {
         if( n == 0)
                 if(s < 10)
@@ -35,49 +36,53 @@ int cifctrl2( int n)
                 return n%9;
 }
 
-void Ccifctrl()
+int cmmdc( int a, int b)
 {
-        int N;
-        scanf("%d", &N);
-        printf("\n%d\n", cifctrl2(N) );
+        if(b>0)
+                return cmmdc(b, a%b);
+        else return a;
 }
 
-void Cfibb()
-{
-        int n;
-        scanf("%d", &n );
-        //printf("%d\n", n );
-        printf(" %d", Rfibb(n) );
+int max2cif(int n, int nr){
+        if(n%10>=n/10%10)
+                nr = max(nr, n%100);
+        //printf("\n%d %d",n, nr );
+        if(n<9)
+                return nr;
+        else
+                return max2cif(n/10, nr);
 }
 
 
-int prim(int n, int d)
+
+int prim(int n, int d=2)
 {
-        //printf("MERE");
         if( n%d==0 || n<2 ){
                 return 0;
         }
-        if( d<=n/2 ){
+        if( d<=sqrt(n) ){
                 return prim(n,d+1);
-        //        printf("%d ", d );
         } else {
                 return 1;
         }
 }
 
 
-void Cprim ()
-{
-        int n;
-        scanf("%d", &n );
-        printf(" %d", prim(n,2));
-}
 
+
+
+
+
+int palindrom()
+{
+
+}
 
 int main ()
 {
 char C[256];
 char q='r';
+
 
 printf("\n>");
 while(q){
@@ -85,21 +90,23 @@ while(q){
         if (strstr(C,                    "quit")){
                 q=0;
         } else if (strstr(C,            "help")){
-                printf("\n cplx - calculator numere complexe \n binN - binomul lui Newton \n");
+                printf("\n cplx - calculator numere complexe\n binN - binomul lui Newton\n cifctrl - cifra de control\n fibb - al n-lea termen din sirul lui Fibbonaci\n prim - daca un nr este prima\n");
         } else if (strstr(C,            "TEST")){
                 //TEST();
         } else if (strstr(C,            "cifctrl")){
-                Ccifctrl();
+                cifctrl();
         } else if (strstr(C,            "fibb")){
-                Cfibb();
+                fibb();
         } else if (strstr(C,            "prim")){
-                Cprim();
-        } else if (strstr(C,            "mrara")){
-                //Mrara();
+                prim();
+        } else if (strstr(C,            "max2cif")){
+                max2cif();
+        } else if (strstr(C,            "cmmdc")){
+                cmmdc();
         } else if (strstr(C,            "/pol/")){
-                printf("Hitler did nothing wrong\n");
+                printf("\nHitler did nothing wrong\n");
         } else
-                printf("type \"help\" for a list of commands\n");
+                printf("\ntype \"help\" for a list of commands\n");
         }
 
 }

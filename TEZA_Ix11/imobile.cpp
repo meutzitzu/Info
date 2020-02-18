@@ -22,13 +22,18 @@ char tip[2][256]={"casa\0", "apartament\0"};
 
 imobil li[256];
 void citire(){
+<<<<<<< HEAD
         FILE *fp;
         fp = fopen("./imobile.in", "r");
+=======
+        FILE *fin;
+        fin = fopen("imobile.in", "r");
+>>>>>>> a9cca00b2721dc3114f2503c3cbc8937bee7209f
 
         int k = 0;
         while( fscanf(fp, "%u %u %u %u %[^\n]s", &li[k].tip, &li[k].nrc, &li[k].sup, &li[k].pre, &li[k].car ) == 5){
                 k++;
-                //li[k].pmp= li[k].pre / li[k].sup;
+                li[k].pmp= (float)((float)li[k].pre / (float)li[k].sup);
         }
         N = k;
         printf("\nCITIREA MERE\n");
@@ -65,7 +70,7 @@ void afisareA()
 
 void sortare()
 {
-        for(int i=0;i<N;i++)
+        for(int i=0; i<N; i++)
         {
                 int imin=i;
                 for(int j=i+1; j<N; j++){
@@ -75,7 +80,7 @@ void sortare()
                 }
                 imobil aux=li[imin];
                 while (imin>i){
-                        swapimo(li[imin], li[imin--]);
+                        swapimo(li[imin], li[--imin]);
                 }
                 swapimo(li[i], aux);
         }
