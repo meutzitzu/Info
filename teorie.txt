@@ -363,7 +363,7 @@ void bt(int k)
         for ( i=0; i<=n; i++){
                 x[k]=i;
                 sum[k]=sum[k+1]+i;
-                if(corect(k))
+                if(corect(k)){
                         if(k==n)
                                 afis(k);
                         else bt(k+1);
