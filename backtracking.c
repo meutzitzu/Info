@@ -6,17 +6,25 @@ int     ix[NUMBER_OF_ELEMENTS];
 int     x[NUMBER_OF_ELEMENTS],
         sum[NUMBER_OF_ELEMENTS],
         S,n;
+int b[NUMBER_OF_ELEMENTS];
 
 void afis( int k)
 {
         for(int i=1;i<=k;i++)
-                printf("%d ", x[i] );
+                printf("%d ", b[i] );
         printf("\n");
 }
 
 void citire()
 {
-        fscanf(fin, "%d", nr);
+        FILE* fin;
+        fin = fopen("date.in", "r");
+        fscanf(fin, "%d", S);
+        int i=0;
+        while( fscanf(fin, "%d[^\n]", b[i])==1 ){
+                i++;
+        }
+        n=i;
 }
 
 void def_ix()
@@ -34,25 +42,15 @@ void def_ix()
 //printf("MERE\n" );
 int corect(int k)
 {
-        if(k> 1){
-                if(x[k-1]==a[k] && g[k-1]!=g[k]){
-                        return 0;
-                }
-        }
-        else
-                return 1;
+
 }
 void bt( int k)
 {
-        for(int i=0;i<=9;i++)
+        for(int i=0; i<= (S-sum[k-1] )/b[k]; i++)
         {
                 x[k]=i;
-                sum[k]=sum[k-1]+i;
-                if(corect(k))
-                {
-                        if(k==n)afis(k);
-                                else bt(k+1);
-                }
+                sum[k]=sum[k-1]+i*b[k];
+                if(k==nr)
         }
 }
 
