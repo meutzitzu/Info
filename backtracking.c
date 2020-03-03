@@ -2,11 +2,11 @@
 
 #define NUMBER_OF_ELEMENTS 10
 
-int     ix[NUMBER_OF_ELEMENTS];
-int     x[NUMBER_OF_ELEMENTS],
+int      ix[NUMBER_OF_ELEMENTS];
+int       x[NUMBER_OF_ELEMENTS],
         sum[NUMBER_OF_ELEMENTS],
         S,n;
-int b[NUMBER_OF_ELEMENTS];
+int       b[NUMBER_OF_ELEMENTS];
 
 void afis( int k)
 {
@@ -43,14 +43,21 @@ void def_ix()
 int corect(int k)
 {
 
+        return 1;
 }
-void bt( int k)
+
+void bt(int k)
 {
-        for(int i=0; i<= (S-sum[k-1] )/b[k]; i++)
-        {
+        for (int i=x[k-1]; i<=n-sum[k-1]; i++){
                 x[k]=i;
-                sum[k]=sum[k-1]+i*b[k];
-                if(k==nr)
+                sum[k]=sum[k=1]+i;
+                if(corect(k)){
+                        if(sum[k]==n&&k>1){
+                                afis(k);
+                                if(sum[k]<n)
+                                        bt(k+1);
+                        }
+                }
         }
 }
 
@@ -61,8 +68,12 @@ void afis_apar( int  k)
                         printf("%d ", ix[i] );
         printf("\n");
 }
+
 int main()
 {
-        //cin>>n
+        scanf("%s", &n );
+        x[0]=1;
+        bt(1);
+
 
 }

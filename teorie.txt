@@ -369,3 +369,22 @@ void bt(int k)
                         else bt(k+1);
                         }
         }
+
+
+
+B A C K T R A C K I N G   D E   D I M E N S I U N E V A R I A B I L A
+
+void bt(int k)
+{
+        for (int i=1, i<=n; i++){
+        x[k]=i;
+        if(corect(k)){
+                afis(k);
+                if(k<n)
+                        bt(k+1);
+                }
+        }
+}
+
+
+!!! CONDITIE PENTRU EVITAREA REPETITIILOR: '<=' intre 2 elemente consecutive
