@@ -1,35 +1,25 @@
+#include <iostream>
+#include <fstream>
+#include <cstring>
+using namespace std;
+ifstream fin("date.in");
 
+struct cub{
+    char culoare[10];
+    int l;
+}a[20];
 
-#include <stdio.h>
-#include <string.h>
+int n, x[20], y[20], kmax;
 
-#define NUMBER_OF_ELEMENTS      20
-#define STRING_LENGTH           32
-
-int     n,
-        x[NUMBER_OF_ELEMENTS],
-        y[NUMBER_OF_ELEMENTS],
-        kmax;
-
-        struct cub {
-                char culoare[STRING_LENGTH];
-                int l;
-        }a[NUMBER_OF_ELEMENTS];
-        
-
-void citire (){
-    FILE* fin;
-    fin = fopen("date.in", "r");
-
-    fscanf( fin,"%d", n );
-    for( int i= 1; i<= n; i++ )
-        fscanf(fin, "%s %d", a[i].culoare, a[i].l );
-    for( int i= 1; i< n; i++ )
+void citire () {
+    fin >> n;
+    for ( int i = 1; i <= n; i++ )
+        fin >> a[i].culoare >> a[i].l;
+    for ( int i = 1; i < n; i++ )
         for ( int j = i + 1; j <= n; j++ )
         if ( a[i].l < a[j].l )
             swap(a[i],a[j]);
 }
-
 int k;
 void afisare ( int k ){
     for ( int i = 1; i <= k; i++ )
