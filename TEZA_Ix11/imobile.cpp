@@ -22,13 +22,13 @@ char tip[2][256]={"casa\0", "apartament\0"};
 
 imobil li[256];
 void citire(){
-<<<<<<< HEAD
+
         FILE *fp;
         fp = fopen("./imobile.in", "r");
-=======
+
         FILE *fin;
         fin = fopen("imobile.in", "r");
->>>>>>> a9cca00b2721dc3114f2503c3cbc8937bee7209f
+
 
         int k = 0;
         while( fscanf(fp, "%u %u %u %u %[^\n]s", &li[k].tip, &li[k].nrc, &li[k].sup, &li[k].pre, &li[k].car ) == 5){
