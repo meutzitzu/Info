@@ -129,6 +129,7 @@ int main()
 				golesc(B);
 				B[i][j] = A[i][j];
 				bt(i, j, A[i][j], 1);
+				//printf("\nbt( A[ %d][ %d])\n", i, j);
 				afisare();
 			}
 
